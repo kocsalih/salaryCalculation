@@ -31,7 +31,10 @@ namespace salaryCalculation
             _grossSales = GrossSale;
             _commissionRate = Commission;
         }
+        public CommissionEmployee()
+        {
 
+        }
 
         public override double earnings()
         {

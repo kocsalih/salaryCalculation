@@ -6,25 +6,8 @@ using System.Threading.Tasks;
 
 namespace salaryCalculation
 {
-    public class BasePlusCommissionEmployee : Employee
+    public class BasePlusCommissionEmployee : CommissionEmployee
     {
-
-        private double grossSales;
-
-        public double _grossSales
-        {
-            get { return grossSales; }
-            set { grossSales = value; }
-        }
-
-
-        private double commissionRate;
-
-        public double _commissionRate
-        {
-            get { return commissionRate; }
-            set { commissionRate = value; }
-        }
 
 
         private double baseSalary;
@@ -36,15 +19,15 @@ namespace salaryCalculation
         }
         public BasePlusCommissionEmployee(double commission,double grossSale,double baseSale)
         {
-            _commissionRate = commission;
-            _grossSales = grossSale;
-            _baseSalary = baseSale;
+           _commissionRate = commission;
+           _grossSales = grossSale;
+           _baseSalary = baseSale;
         }
 
 
         public override double earnings()
         {
-            return (_commissionRate * _grossSales) + _baseSalary;
+            return base.earnings() + _baseSalary;
         }
 
 
